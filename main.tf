@@ -15,11 +15,13 @@ variable "subnet_address_prefixes" {
   type = "list"
 }
 
-module "networking" {
-  source  = "app.terraform.io/app/ftfcu-training/networking/azurerm"
+module "sjhnetworking" {
+  source  = "app.terraform.io/ftfcu-training/sjhnetworking/azurerm"
   version = "0.12.0"
+
 
   name                    = var.name
   location                = var.location
   vnet_address_spacing    = var.vnet_address_spacing
   subnet_address_prefixes = var.subnet_address_prefixes
+  }
